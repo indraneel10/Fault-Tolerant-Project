@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: Github
+  labels:
+    app: Github
+  namespace: namespace-workflow-1715268387758
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: Github
+  template:
+    metadata:
+      labels:
+        app: Github
+    spec:
+      containers:
+        - name: Github
+          image: acrworkflow1715268387758.azurecr.io/image-workflow-1715268387758:latest
+          ports:
+            - containerPort: 8000
