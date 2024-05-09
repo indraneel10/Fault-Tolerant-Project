@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: Github
+  namespace: namespace-workflow-1715268387758
+spec:
+  type: LoadBalancer
+  selector:
+    app: Github
+  ports:
+    - protocol: TCP
+      port: 8000
+      targetPort: 8000
